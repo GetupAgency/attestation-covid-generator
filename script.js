@@ -31,3 +31,37 @@ document.getElementById('undo').addEventListener('click', function () {
     signaturePad.fromData(data);
   }
 });
+
+
+
+$(function() {
+
+  // READY
+  $('#submit').click(function(){
+
+    var datas = {
+      name: $('#nomprenom').val(),
+      birth: $('#nee').val(),
+      address1: $('#demeurant1').val(),
+      address2: $('#demeurant2').val(),
+      address3: $('#demeurant3').val(),
+      choice: parseInt($('input[name=raison]:checked').val()),
+      city: $('#fait-a').val(),
+      signature: document.getElementById('signature-pad').toDataURL(),
+      email: $('#email').val()
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "http://api.attestation-sortie-covid19.fr/generate",
+      data: datas,
+      success: function(data){
+        console.log("on est ok");
+        console.log(data);
+      }
+    });
+
+  });
+
+
+});
