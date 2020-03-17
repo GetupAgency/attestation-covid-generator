@@ -147,7 +147,21 @@ button:focus {
 
 
 /*** VAL ***/
+html, body{
+  margin:0 auto;
+}
 
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
 
 .intro-texte{
   color: #707070;
@@ -218,8 +232,8 @@ button:focus {
   border-radius: 2px;
 }
 
-.input-check .checkbox-custom[type=checkbox]:before {
-  background: black url("http://i.imgur.com/dR1TM0y.png");
+.input-check .checkbox-custom[type=radio]:before {
+  background: black url("./assets/img/check.png");
   background-size: 10px 8px;
   background-repeat: no-repeat;
   background-position: 3px 4px;
@@ -232,7 +246,7 @@ button:focus {
   color: #f6ac4f;
 }
 
-.input-check .checkbox-custom[type=checkbox]:checked:before {
+.input-check .checkbox-custom[type=radio]:checked:before {
   content: '';
   position: absolute;
   top: 0px;
