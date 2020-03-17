@@ -6,6 +6,7 @@
     <title>Obtenez votre attestation de sortie pour le Covid-19 en 30 secondes.</title>
     <link href="styles.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/sweetalert2.min.css">
     <meta name="description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes">
     <meta property="og:title" content="Attestation de sortie Covid-19 en PDF" />
     <meta property="og:description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes. Entièrement gratuit" />
@@ -141,11 +142,18 @@
       </div>
     </div>
 
+    <!-- LOADER -->
+    <div id="overlay" style="display:none;">
+        <div class="spinner"></div>
+        <br/>
+    </div>
+
     <footer>crée par <a href="https://www.getup.agency/">Getup Agency</a> pour le bien de tous</footer>
     
 
     <script type="text/javascript" src="https://szimek.github.io/signature_pad/js/signature_pad.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/sweetalert2.min.js"></script>
 
     <script type="text/javascript" src="script.js"></script>
 

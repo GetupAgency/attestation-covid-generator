@@ -53,12 +53,21 @@ $(function() {
         email: $('#email').val()
       }
   
+      $('#overlay').show();
+
       $.ajax({
         type: "POST",
         url: "http://api.attestation-sortie-covid19.fr/generate",
         data: datas,
         success: function(data){
           $('#submit').prop('disabled', 'true');
+          $('#overlay').hide();
+
+          Swal.fire(
+            'Attestation envoyée !',
+            'Vous allez recevoir votre attestation dans la minute, pensez bien à regarder vos spams!',
+            'success'
+          );
         }
       });
 
