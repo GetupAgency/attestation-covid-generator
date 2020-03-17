@@ -18,7 +18,21 @@
   }
 
 
+html, body{
+    margin:0 auto;
+}
 
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
 
   /* Buttons */
 
@@ -130,3 +144,108 @@ button:focus {
     margin-right: auto;
   }
 }
+
+
+/*** VAL ***/
+
+
+.intro-texte{
+  color: #707070;
+  font-weight: 400;
+}
+
+
+/** ATTESTATION CANVAS **/
+#attestation{
+  padding: 50px; 
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 780px;
+}
+
+.header-attestation{
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.input-texte{
+  border-bottom: 1px dashed black;
+  border-left: none!important;
+  border-right: none!important;
+  border-top: none!important;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.input label{
+  min-width: 150px;
+  font-weight: bold;
+}
+
+.input-check {
+  display: flex;
+  margin-top: 30px;
+}
+
+.input-check .checkbox-custom {
+  min-width: 50px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+}
+
+.input-check .checkbox-custom:after {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.input-check .checkbox-custom[type=checkbox]:before {
+  background: black url("http://i.imgur.com/dR1TM0y.png");
+  background-size: 10px 8px;
+  background-repeat: no-repeat;
+  background-position: 3px 4px;
+  position: absolute;
+  left: 2px;
+  z-index: 2;
+  opacity: 0;
+  width: 16px;
+  height:16px;
+  color: #f6ac4f;
+}
+
+.input-check .checkbox-custom[type=checkbox]:checked:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+  left: 0px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+
+.mt-50{margin-top: 50px;}
+.mb-50{margin-bottom: 50px;}
+
+.m-none{margin: 0;}
+
+.super-bold{font-weight: 700!important;}
