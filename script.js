@@ -41,35 +41,47 @@ $(function() {
 
     if(!$('#submit').prop('disabled')){
 
-      var datas = {
-        name: $('#nomprenom').val(),
-        birth: $('#nee').val(),
-        address1: $('#demeurant1').val(),
-        address2: $('#demeurant2').val(),
-        address3: $('#demeurant3').val(),
-        choice: parseInt($('input[name=raison]:checked').val()),
-        city: $('#fait-a').val(),
-        signature: document.getElementById('signature-pad').toDataURL(),
-        email: $('#email').val()
-      }
-  
-      $('#overlay').show();
+      if($('#nomprenom').val() == undefined ||$('#nomprenom').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner votre nom et prénom'
+        })
+      }else{
 
-      $.ajax({
-        type: "POST",
-        url: "https://api.attestation-sortie-covid19.fr/generate",
-        data: datas,
-        success: function(data){
-          $('#submit').prop('disabled', 'true');
-          $('#overlay').hide();
-
-          Swal.fire(
-            'Attestation envoyée !',
-            'Vous allez recevoir votre attestation dans la minute, pensez bien à regarder vos spams!',
-            'success'
-          );
+        var datas = {
+          name: $('#nomprenom').val(),
+          birth: $('#nee').val(),
+          address1: $('#demeurant1').val(),
+          address2: $('#demeurant2').val(),
+          address3: $('#demeurant3').val(),
+          choice: parseInt($('input[name=raison]:checked').val()),
+          city: $('#fait-a').val(),
+          signature: document.getElementById('signature-pad').toDataURL(),
+          email: $('#email').val()
         }
-      });
+    
+        $('#overlay').show();
+  
+        $.ajax({
+          type: "POST",
+          url: "https://api.attestation-sortie-covid19.fr/generate",
+          data: datas,
+          success: function(data){
+            $('#submit').prop('disabled', 'true');
+            $('#overlay').hide();
+  
+            Swal.fire(
+              'Attestation envoyée !',
+              'Vous allez recevoir votre attestation dans la minute, pensez bien à regarder vos spams!',
+              'success'
+            );
+          },error: function(){
+            $('#overlay').hide();
+          }
+        });
+      }
+
 
     }
     
