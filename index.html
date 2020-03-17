@@ -5,21 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obtenez votre attestation de sortie pour le Covid-19 en 30 secondes.</title>
     <link href="styles.css" rel="stylesheet"/>
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <meta name="description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes">
+    <meta property="og:title" content="Attestation de sortie Covid-19 en PDF" />
+    <meta property="og:description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes. Entièrement gratuit" />
+    <meta property="og:url" content="https://www.attestation-sortie-covid19.fr/" />
+    <meta property="og:image" content="https://www.attestation-sortie-covid19.fr/img/poster.jpg" />
 </head>
 <body>
-    <div class="wrapper">
-    <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
-     </div>
-      <div class="button-wrapper">
-        <button class="trigger-hover" id="save-png">Sauvegarder en PNG<img src="assets/img/download.svg" class="downloadIco"/></button>
-        <button class="trigger-hover" id="save-jpeg">Sauvegarder en JPEG<img src="assets/img/download-green.svg" class="downloadIco"/></button>
-        <button class="trigger-hover" id="save-svg">Sauvegarder en SVG<img src="assets/img/download-green.svg" class="downloadIco"/></button>
-        <button class="trigger-hover ico-align-middle" id="undo">Retour en arrière<img src="assets/img/undo.svg" class="downloadIco"/></button>
-        <button class="trigger-hover" id="clear">Recommencer</button>
-      </div>
-      <script type="text/javascript" src="https://szimek.github.io/signature_pad/js/signature_pad.umd.js"></script>
-      <script type="text/javascript" src="script.js"></script>
+  
+    <!-- INTRO -->
+    <h3 class="m-none intro-texte mt-50" style="font-size: 24px;"><b>Obtenez votre attestation</b> de sortie pour le covid 19 <b>en 30 secondes</b></h3><br>
+    <h3 class="m-none intro-texte">Remplissez les champs, signez et obtenez l’attestation en PDF</h3>
+    <h3 class="m-none intro-texte"><b>Pas besoin d’imprimante</b>, montrez le pdf sur votre smartphone en cas de contrôle</h3>
+
+    <!-- ATTESTATION -->
+    <div id="attestation">
+
+
+        <div class="header-attestation">
+            <b class="super-bold">ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</b><br><br>
+            En application de l’article 1er du décret du 16 mars 2020 portant réglementation des<br>
+            déplacements dans le cadre de la lutte contre la propagation du virus Covid-19 :<br>
+        </div>
+
+        <div class="input">
+
+            <b>Je soussigné(e)</b><br><br>
+
+            <div style="display: flex">
+                <label for="nom/prenom">Mme / M.</label>
+                <input type="text" class="input-texte" placeholder="Renseignez votre nom et prénom" id="nom/prenom" />
+            </div>
+
+            <br>
+
+            <div style="display: flex">
+                <label for="nee">Né(e) le :</label>
+                <input type="text" class="input-texte" placeholder="Renseignez votre date de naissance" id="nee" />
+                </div>
+            <br>
+
+            <div style="display: flex">
+                <label for="demeurant">Demeurant :</label>
+                <input type="text" class="input-texte" placeholder="Renseignez votre lieu de domicile" id="demeurant" />
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <b style="text-align: justify; display: block">certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par
+        l’article 1er du décret du 16 mars 2020 portant réglementation des déplacements dans
+        le cadre de la lutte contre la propagation du virus Covid-19 :</b>
+
+        <div class="input-check">
+            <input type="radio" id="deplacement_travail" class="checkbox-custom" name="raison"/>
+
+            <label for="deplacement_travail">déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle,
+                lorsqu’ils sont indispensables à l’exercice d’activités ne pouvant être organisées
+                sous forme de télétravail (sur justificatif permanent) ou déplacements
+                professionnels ne pouvant être différés ;</label>
+        </div>
+
+        <div class="input-check">
+            <input type="radio" id="deplacement_achats" class="checkbox-custom" name="raison"/>
+
+            <label for="deplacement_achats">déplacements pour effectuer des achats de première nécessité dans des
+                établissements autorisés (liste sur gouvernement.fr); </label>
+        </div>
+
+        <div class="input-check">
+            <input type="radio" id="deplacement_sante" class="checkbox-custom" name="raison" />
+
+            <label for="deplacement_sante">déplacements pour motif de santé;</label>
+        </div>
+
+        <div class="input-check">
+            <input type="radio" id="deplacement_familial" class="checkbox-custom" name="raison"/>
+
+            <label for="deplacement_familial">déplacements pour motif familial impérieux, pour l’assistance aux personnes
+                vulnérables ou la garde d’enfants ;</label>
+        </div>
+
+        <div class="input-check">
+            <input type="radio" id="deplacement_brefs" class="checkbox-custom" name="raison"/>
+
+            <label for="deplacement_brefs">déplacements brefs, à proximité du domicile, liés à l’activité physique individuelle
+                des personnes, à l’exclusion de toute pratique sportive collective, et aux besoins
+                des animaux de compagnie.</label>
+        </div>
+
+        <div class="container-signature">
+
+          <div style="width: 100%;">
+            <div style="font-size: 12px;font-weight: 600;margin-top: 20px">signez dans l’encadré</div>
+
+            <!-- SIGNATURE -->
+            <div class="wrapper">
+              <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+            </div>
+
+            <div class="button-wrapper">
+              <button class="trigger-hover ico-align-middle" id="undo">Retour en arrière<img src="assets/img/undo.svg" class="downloadIco"/></button>
+              <button class="trigger-hover" id="clear">Recommencer</button>
+            </div>
+          </div>
+
+          <!-- FAIT LE -->
+          <div style="display: flex" class="fait-a">
+
+            <label for="fait-a" style="min-width: 50px;">Fait à</label>
+            <input type="text" id="fait-a" class="input-texte" />
+          </div>
+
+        </div>
+
+    </div>
+
+    <!-- INPUT MAIL -->
+    <div class="input-resp">
+      <p style="color: #00A9A8; text-align: center;" >Renseignez votre e-mail pour recevoir votre attestation</p>
+      <input type="mail" placeholder="Renseignez votre email" class="input-mail" />
+      <input type="submit" value="Recevoir mon attestation" class="input-submit" />
+    </div>
+
+    <footer>crée par <a href="https://www.getup.agency/">Getup Agency</a> pour le bien de tous</footer>
+    
+
+    <script type="text/javascript" src="https://szimek.github.io/signature_pad/js/signature_pad.umd.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105700553-16"></script>
 <script>
