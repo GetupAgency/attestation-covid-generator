@@ -292,6 +292,11 @@ body{
   cursor: pointer;
 }
 
+.input-submit:disabled{
+  opacity: 0.1;
+}
+
+
 footer a{
   color: #00A9A8!important;
   text-decoration: none!important;
