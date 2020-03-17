@@ -57,7 +57,7 @@ $(function() {
 
       $.ajax({
         type: "POST",
-        url: "http://api.attestation-sortie-covid19.fr/generate",
+        url: "https://api.attestation-sortie-covid19.fr/generate",
         data: datas,
         success: function(data){
           $('#submit').prop('disabled', 'true');
