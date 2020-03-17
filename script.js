@@ -47,6 +47,36 @@ $(function() {
           title: 'Oops...',
           text: 'Il semblerait que vous avez oubliez de renseigner votre nom et prénom'
         })
+      }else if($('#nee').val() == undefined ||$('#nee').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner votre date de naissance'
+        })
+      }else if($('#demeurant1').val() == undefined ||$('#demeurant1').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner votre adresse'
+        })
+      }else if($('input[name=raison]:checked').val() == undefined || $('input[name=raison]:checked').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner votre motif de déplacement'
+        })
+      }else if($('#fait-a').val() == undefined || $('#fait-a').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner l\'encart "fait à"'
+        })
+      }else if($('#email').val() == undefined || $('#email').val() == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Il semblerait que vous avez oubliez de renseigner votre adresse email pour recevoir l\'attestation'
+        })
       }else{
 
         var datas = {
