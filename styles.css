@@ -118,26 +118,28 @@ button:focus {
   border: 2px solid #00a9a8;
   background-color: #00a9a8;
   transition: all .3s ease;
-  padding: 10px 10px;
+  padding: 10px 20px;
   color: #fff;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   font-size: 15px;
+  font-weight: 500;
 }
 
 #clear {
-  border: 2px solid #dc3545;
-  background-color: #dc3545;
+  border: 2px solid #00a9a8;
+  background-color: #fff;
   transition: all .3s ease;
-  padding: 10px 10px;
-  color: #fff;
+  padding: 10px 20px;
+  color: #00a9a8;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   font-size: 15px;
+  font-weight: 500;
 }
 #clear:hover {
-  background-color: #fff;
-  color: #dc3545;
+  background-color: #00a9a8;
+  color: #fff;
 }
 
 .button-wrapper {
@@ -164,7 +166,7 @@ button:focus {
   border: 2px solid #00a9a8;
   background-color: #00a9a8;
   transition: all .3s ease;
-  padding: 10px 10px;
+  padding: 10px 45px;
   color: #fff;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
@@ -229,34 +231,41 @@ body{
 /** ATTESTATION CANVAS **/
 #attestation{
   padding: 50px; 
-  border: 1px solid black;
-  margin-top: 50px;
+  margin-top: -70px;
   margin-bottom: 50px;
-  max-width: 780px;
+  max-width: 900px;
+  background-color: #fff;
+  box-shadow: 0px 6px 55px 12px rgba(2, 2, 2, 0.11)
 }
 
 
 .header-attestation{
   padding-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 15px;
   text-align: center;
 }
 
 .input-texte{
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed #727577;
   border-left: none!important;
   border-right: none!important;
   border-top: none!important;
   width: 100%;
-  padding-top: 15px;
   padding-bottom: 15px;
   position: relative;
+  margin-bottom: 15px;
+}
+input:focus {
+  outline: none;
 }
 
 
 .input label{
   min-width: 150px;
   font-weight: bold;
+}
+.input-label::placeholder {
+  color: #939393 !important;
 }
 
 .container-signature{
@@ -403,6 +412,9 @@ footer{
 
 .super-bold{font-weight: 700!important;}
 
+#fait-a {
+  margin-bottom: 0px !important;
+}
 
 @media screen and (max-width: 768px) {
   #attestation{
@@ -451,5 +463,233 @@ footer{
 
   .input label{
     min-width: 90px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Refacto */
+body {
+  overflow-x: hidden;
+}
+
+.topbar {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  height: 65px;
+  width: 100%;
+}
+.topbar > p {
+  font-weight: 300 !important;
+  margin-top: 21px;
+  font-size: 16px !important;
+  color: #00a9a8;
+}
+
+.actus:before {
+  content: '';
+  width: 75px;
+  height: 50px;
+  background-image: url(assets/img/quotes.jpg);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.after-triangle:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 100vw 252px 0;
+  border-color: transparent #00a9a8 transparent transparent;
+  position: relative;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+.actus {
+  text-align: center;
+  border: 1px dashed #fff;
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  color: #fff;
+  z-index: 9;
+  position: relative;
+}
+.actus:after {
+  z-index: 1;
+  content: 'ACTUS';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 105px;
+  font-weight: bold;
+}
+.date {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.actus-content {
+  max-width: 800px;
+  margin: 0px auto 10px auto;
+  font-size: 18px;
+}
+
+.main-content {
+  font-size: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.main-title {
+  font-size: 45px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.text-light-intro {
+  font-size: 22px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+
+.title-attestation {
+  font-size: 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+  text-align: center;
+  color: #111111;
+}
+
+.bad-text {
+  font-size: 17px;
+  color: #111111;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 750px;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+.input {
+  max-width: 700px;
+  margin: auto;
+}
+
+.signez {
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.34;
+}
+#signature-pad {
+  border: dashed 1px #727577;
+}
+
+#email {
+  border: 1px dashed #00a9a8 !important;
+}
+
+
+
+.bck-green {
+  background-color: #00a9a8;
+}
+.w-100p {
+  width: 100%;
+}
+.t-color-ffffff > h1, .t-color-ffffff > h2, .t-color-ffffff > h3, .t-color-ffffff > p  {
+  color: #fff;
+}
+.upper {
+  text-transform: uppercase;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+.m-w-1100px {
+  max-width: 1100px;
+}
+.m-auto {
+  margin: auto;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.pb-12 {
+  padding-bottom: 12px;
+}
+.mw-m-auto {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1082px) {
+  body {
+    padding-top: 75px;
+  }
+}
+@media screen and (max-width: 593px) {
+  body {
+    padding-top: 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-title {
+    font-size: 35px;
+  }
+  .actus:after {
+    font-size: 80px;
+  }
+  .title-attestation {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .button-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  body {
+    padding-top: 115px;
+  }
+}
+@media screen and (max-width: 344px) {
+  body {
+    padding-top: 130px;
   }
 }

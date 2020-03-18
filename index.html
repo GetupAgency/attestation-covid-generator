@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obtenez votre attestation de sortie pour le Covid-19 en 30 secondes.</title>
-    <link href="styles.css?v=1" rel="stylesheet"/>
+    <link href="styles.css?v=2" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/sweetalert2.min.css">
     <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
@@ -20,25 +20,36 @@
 <body>
   
     <!-- INTRO -->
-    <h1 class="m-none intro-texte mt-50" style="font-size: 24px;"><b>[18/03 : Les autorités semblent remettre en doute la validité du document, rien n'est encore arrêté, tous les citoyens n'ont pas d'imprimante...]</b></h1><br>
-    <h1 class="m-none intro-texte mt-50" style="font-size: 24px;"><b>[Nous ne gagnons rien lorsque vous utilisez ce service, nous l'avons développé pour l'intérêt public, absolument rien n'est stocké]</b></h1><br>
+    <div class="topbar">
+      <p class="m-none intro-texte" style="font-size: 24px;">Nous ne gagnions rien lorsque vous utilisez ce service, 
+        nous l'avons développé pour l'intérêt public, absolument rien n'est stocké
+      </p>
+    </div>
+    <div class="bck-green w-100p t-color-ffffff pb-12">
 
-    <h1 class="m-none intro-texte mt-50" style="font-size: 24px;"><b>Obtenez votre attestation</b> de sortie pour le covid 19 <b>en 30 secondes</b></h1><br>
-    <h2 class="m-none intro-texte">Remplissez les champs, signez et obtenez l’attestation en PDF en téléchargement direct</h2>
+      <div class="actus">
+        <p class="date">18 MARS 2020</p>
+        <p class="actus-content">Les autorités semblent remettre en doute la validité du document, rien n'est encore arrêté, tous les citoyens n'ont pas d'imprimante</p>
+      </div>
 
+      <h1 class="m-none intro-texte mt-50 upper main-title mb-30"><b>Obtenez votre attestation de sortie pour le covid 19 en 30 secondes</b></h1><br>
+      <h2 class="m-none intro-texte mb-30 m-w-1100px text-light-intro m-auto">Remplissez les champs, signez et obtenez l’attestation en PDF en téléchargement direct</h2>
+      <h3 class="m-none intro-texte m-w-1100px text-light-intro m-auto">Pas besoin d’imprimante, montrez le pdf sur votre smartphone en cas de contrôle, c'est totalement légal !</h3>
+      <div class="after-triangle" style="height: 150px; position: relative;"></div>
+    </div>
     <!-- ATTESTATION -->
     <div id="attestation">
 
 
         <div class="header-attestation">
-            <b class="super-bold">ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</b><br><br>
-            En application de l’article 1er du décret du 16 mars 2020 portant réglementation des<br>
-            déplacements dans le cadre de la lutte contre la propagation du virus Covid-19 :<br>
+            <b class="title-attestation">ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</b><br><br>
+            <p class="bad-text">En application de l’article 1er du décret du 16 mars 2020 portant réglementation des
+            déplacements dans le cadre de la lutte contre la propagation du virus Covid-19 :</p>
         </div>
 
         <div class="input">
 
-            <b>Je soussigné(e)</b><br><br>
+            <b>Je soussigné(e)</b><br><br><br>
 
             <div style="display: flex">
                 <label for="nomprenom">Mme / M.</label>
@@ -66,11 +77,11 @@
 
         <br><br>
 
-        <b style="text-align: justify; display: block">certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par
+        <p class="mw-m-auto bold">certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par
         l’article 1er du décret du 16 mars 2020 portant réglementation des déplacements dans
-        le cadre de la lutte contre la propagation du virus Covid-19 :</b>
+        le cadre de la lutte contre la propagation du virus Covid-19 :</p>
 
-        <div class="input-check">
+        <div class="input-check mw-m-auto">
           <div style="min-width: 50px;">
             <input type="radio" id="deplacement_travail" class="checkbox-custom" name="raison" value="1" required/>
           </div>
@@ -81,7 +92,7 @@
                 professionnels ne pouvant être différés ;</label>
         </div>
 
-        <div class="input-check">
+        <div class="input-check mw-m-auto">
             <div style="min-width: 50px;">
               <input type="radio" id="deplacement_achats" class="checkbox-custom" name="raison" value="2" required/>
             </div>
@@ -90,7 +101,7 @@
                 établissements autorisés (liste sur gouvernement.fr); </label>
         </div>
 
-        <div class="input-check">
+        <div class="input-check mw-m-auto">
             <div style="min-width: 50px;">
               <input type="radio" id="deplacement_sante" class="checkbox-custom" name="raison" value="3" required/>
             </div>
@@ -98,7 +109,7 @@
             <label for="deplacement_sante">déplacements pour motif de santé;</label>
         </div>
 
-        <div class="input-check">
+        <div class="input-check mw-m-auto">
             <div style="min-width: 50px;">
               <input type="radio" id="deplacement_familial" class="checkbox-custom" name="raison" value="4" required />
             </div>
@@ -107,7 +118,7 @@
                 vulnérables ou la garde d’enfants ;</label>
         </div>
 
-        <div class="input-check">
+        <div class="input-check mw-m-auto">
             <div style="min-width: 50px;">
               <input type="radio" id="deplacement_brefs" class="checkbox-custom" name="raison" value="5" required/>
             </div>
@@ -117,18 +128,18 @@
                 des animaux de compagnie.</label>
         </div>
 
-        <div class="container-signature">
+        <div class="container-signature mt-50 mw-m-auto">
 
           <div style="width: 100%;">
-            <div style="font-size: 12px;font-weight: 600;margin-top: 20px">signez dans l’encadré (avec le doigt ou la souris)</div>
+            <div class="signez">Signez dans l’encadré (avec le doigt ou la souris)</div>
 
             <!-- SIGNATURE -->
             <div class="wrapper" ontouchmove="return false">
               <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
             </div>
             <div class="button-wrapper">
-              <button class="trigger-hover ico-align-middle" id="undo">Retour en arrière<img src="assets/img/undo.svg" class="downloadIco"/></button>
-              <button class="trigger-hover" id="clear">Recommencer</button>
+              <button class="trigger-hover ico-align-middle upper" id="undo">Retour en arrière<img src="assets/img/undo.svg" class="downloadIco"/></button>
+              <button class="trigger-hover upper" id="clear">Recommencer</button>
             </div>
 
 
@@ -146,17 +157,17 @@
     </div>
 
     <!-- INPUT MAIL -->
-    <div class="input-resp" style="padding: 36px; border: 1px solid #000;">
+    <div class="input-resp" style="padding: 36px;">
       <p style="color: #00A9A8; text-align: center;" >Renseignez votre e-mail pour recevoir votre attestation</p>
       <input type="mail" placeholder="Renseignez votre email" class="input-mail" id="email" required />
-      <input type="submit" id="submit" value="Recevoir mon attestation" class="input-submit" /><br>
+      <input type="submit" id="submit" value="RECEVOIR MON ATTESTATION" class="input-submit" /><br>
       <div style="display: flex;justify-content: space-between;margin-top: 10px;">
-        <div style="font-size: 10px;text-align: left;">en utilisant ce service, vous acceptez les <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px;">conditions d'utilisations</a></div>
+        <div style="font-size: 10px;text-align: left;">en utilisant ce service, vous acceptez les <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px; color: #000;">conditions d'utilisations</a></div>
         <div style="font-size: 10px;text-align: right;">Vérifiez vos spams</div>
       </div>
       <p style="text-align: center; color: #00A9A8;">OU</p>
       <div style="text-align: center; margin-top: 35px; height: 50px;">
-        <a class="trigger-download-attestation trigger-hover" id="telecharger">Télécharger directement en PDF<img src="assets/img/download.svg" class="downloadIco"/></a>
+        <a class="trigger-download-attestation trigger-hover upper" id="telecharger">Télécharger directement en PDF<img src="assets/img/download.svg" class="downloadIco"/></a>
       </div>
       </div>
 
@@ -168,7 +179,7 @@
 
     <footer style="text-align: center;">
      
-            <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px;">Lire les Conditions Générales d'Utilisation</a><br><br>
+            <p>Lire les <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px; color: #000 !important; text-decoration: underline !important;">Conditions Générales d'Utilisation</a></p>
             Crée par <a href="https://www.getup.agency/" target="_blank">Getup Agency</a>
       </footer>
       <div id="lightbox-cgu">
@@ -187,7 +198,7 @@
     <script src="./assets/sweetalert2.min.js"></script>
     <script src="./assets/signaturePad.js"></script>
 
-    <script type="text/javascript" src="script.js?v=1"></script>
+    <script type="text/javascript" src="script.js?v=2"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105700553-16"></script>
