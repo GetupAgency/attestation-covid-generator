@@ -513,8 +513,8 @@ body {
   border-style: solid;
   border-width: 0 100vw 252px 0;
   border-color: transparent #00a9a8 transparent transparent;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: 100%;
   left: 0;
   z-index: -1;
 }
@@ -642,11 +642,54 @@ body {
 .mb-60 {
   margin-bottom: 60px;
 }
-.pb-120 {
-  padding-bottom: 120px;
+.pb-12 {
+  padding-bottom: 12px;
 }
 .mw-m-auto {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1082px) {
+  body {
+    padding-top: 75px;
+  }
+}
+@media screen and (max-width: 593px) {
+  body {
+    padding-top: 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-title {
+    font-size: 35px;
+  }
+  .actus:after {
+    font-size: 80px;
+  }
+  .title-attestation {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .button-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  body {
+    padding-top: 115px;
+  }
+}
+@media screen and (max-width: 344px) {
+  body {
+    padding-top: 130px;
+  }
 }
