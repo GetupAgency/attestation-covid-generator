@@ -189,6 +189,9 @@ button:focus {
   font-weight: bold;
 }
 
+.text-deco-none {
+  text-decoration: none;
+}
 
 /*** VAL ***/
 html, body{
