@@ -122,7 +122,7 @@ button:focus {
   color: #fff;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -491,7 +491,7 @@ body {
 .topbar > p {
   font-weight: 300 !important;
   margin-top: 21px;
-  font-size: 16px !important;
+  font-size: 13px !important;
   color: #00a9a8;
 }
 
@@ -668,16 +668,32 @@ body {
 }
 @media screen and (max-width: 500px) {
   .main-title {
-    font-size: 30px;
+    font-size: 23px;
   }
   .actus:after {
     font-size: 80px;
   }
   .title-attestation {
-    font-size: 28px;
+    font-size: 25px;
   }
   .text-light-intro {
-    font-size: 20px;
+    font-size: 17px;
+  }
+  .after-triangle {
+    height: 73px !important;
+  }
+  .header-attestation {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .bad-text {
+    font-size: 15px;
+  }
+  .input-resp {
+    padding-top : 15px !important;
+  }
+  .signez {
+    font-size: 11px;
   }
 }
 @media screen and (max-width: 425px) {
