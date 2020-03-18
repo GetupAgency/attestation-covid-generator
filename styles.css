@@ -193,6 +193,13 @@ button:focus {
   text-decoration: none;
 }
 
+.featherlight .featherlight-close-icon {
+  font-size: 20px;
+  color: #00a9a8 !important;
+  top: 10px !important;
+  right: 10px !important;
+}
+
 /*** VAL ***/
 html, body{
   margin:0 auto;
