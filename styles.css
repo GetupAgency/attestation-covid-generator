@@ -150,8 +150,55 @@ button:focus {
     margin-left: auto;
     margin-right: auto;
   }
+  #telecharger {
+    display: table !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  #telecharger {
+    font-size: 13px !important;
+  }
 }
 
+#telecharger {
+  border: 2px solid #00a9a8;
+  background-color: #00a9a8;
+  transition: all .3s ease;
+  padding: 10px 10px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#lightbox-cgu {
+  display: none;
+}
+#lightbox-cgu.featherlight-inner {
+  display: block;
+}
+
+.list-cgu li {
+  margin-bottom: 5px;
+}
+
+.t-color-00a9a8 {
+  color: #00a9a8;
+}
+.bold {
+  font-weight: bold;
+}
+
+.text-deco-none {
+  text-decoration: none;
+}
+
+.featherlight .featherlight-close-icon {
+  font-size: 20px;
+  color: #00a9a8 !important;
+  top: 10px !important;
+  right: 10px !important;
+}
 
 /*** VAL ***/
 html, body{

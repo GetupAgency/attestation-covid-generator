@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obtenez votre attestation de sortie pour le Covid-19 en 30 secondes.</title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css?v=1" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/sweetalert2.min.css">
+    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
     <meta name="description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes">
     <meta property="og:title" content="Attestation de sortie Covid-19 en PDF" />
     <meta property="og:description" content="Votre attestation de déplacement dérogatoire pour le Covid-19 en seulement 30 secondes. Entièrement gratuit" />
@@ -19,6 +20,8 @@
 <body>
   
     <!-- INTRO -->
+    <h1 class="m-none intro-texte mt-50" style="font-size: 24px;">[Nous ne gagnions rien lorsque vous utilisez ce service, nous l'avons développé pour l'intérêt public, absolument rien n'est stocké</h1><br>
+
     <h1 class="m-none intro-texte mt-50" style="font-size: 24px;"><b>Obtenez votre attestation</b> de sortie pour le covid 19 <b>en 30 secondes</b></h1><br>
     <h2 class="m-none intro-texte">Remplissez les champs, signez et obtenez l’attestation en PDF</h2>
     <h3 class="m-none intro-texte"><b>Pas besoin d’imprimante</b>, montrez le pdf sur votre smartphone en cas de contrôle, <b>c'est totalement légal !</b></h3>
@@ -143,15 +146,19 @@
     </div>
 
     <!-- INPUT MAIL -->
-    <div class="input-resp">
+    <div class="input-resp" style="padding: 36px; border: 1px solid #000;">
       <p style="color: #00A9A8; text-align: center;" >Renseignez votre e-mail pour recevoir votre attestation</p>
       <input type="mail" placeholder="Renseignez votre email" class="input-mail" id="email" required />
       <input type="submit" id="submit" value="Recevoir mon attestation" class="input-submit" /><br>
       <div style="display: flex;justify-content: space-between;margin-top: 10px;">
-        <div style="font-size: 10px;text-align: left;">en utilisant ce service, vous acceptez les conditions d'utilisations</div>
+        <div style="font-size: 10px;text-align: left;">en utilisant ce service, vous acceptez les <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px;">conditions d'utilisations</a></div>
         <div style="font-size: 10px;text-align: right;">Vérifiez vos spams</div>
       </div>
-    </div>
+      <p style="text-align: center; color: #00A9A8;">OU</p>
+      <div style="text-align: center; margin-top: 35px; height: 50px;">
+        <a class="trigger-download-attestation trigger-hover" id="telecharger">Télécharger directement en PDF<img src="assets/img/download.svg" class="downloadIco"/></a>
+      </div>
+      </div>
 
     <!-- LOADER -->
     <div id="overlay" style="display:none;">
@@ -160,23 +167,29 @@
     </div>
 
     <footer style="text-align: center;">
-      Ce service a été développé en quelques heures par l’équipe de Getup Agency, pour un intérêt public.<br>
-      - TOUTES les données du formulaire ne sont pas stockées ! Nous ne sommes pas responsables des données saisies et des potentiels dysfonctionnement du système.<br>
-      - Le PDF produit est 100% légal à présenter lors d’un contrôle, soyez éco responsables en économisant du papier<br>
-      - Les adresses emails saisies sont conservées à des fins statistiques, et ne seront JAMAIS divulguées ni vendues, mais SUPPRIMEES de notre base de donnée.<br>
-      - Ce site ne constitue pas une « incitation » à produire des attestations, vous devez suivre à la lettre les recommandations du gouvernement et n’utiliser de dérogation qu’en cas d'obligation
-      Pour toute question, vous pouvez nous écrire à contact@getup.agency ou sur notre page Facebook<br>
+     
+            <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px;">Lire les Conditions Générales d'Utilisation</a><br><br>
             Crée par <a href="https://www.getup.agency/" target="_blank">Getup Agency</a>
       </footer>
-
-    <script type="text/javascript" src="https://szimek.github.io/signature_pad/js/signature_pad.umd.js"></script>
+      <div id="lightbox-cgu">
+        <h3>Les Conditions Générales d'Utilisation</h3>
+        <p>Ce service a été développé en quelques heures par l’équipe de <span class="t-color-00a9a8 bold">Getup Agency</span>, pour un intérêt public.</p>
+        <ul class="list-cgu">
+          <li>TOUTES les données du formulaire ne sont pas stockées ! Nous ne sommes pas responsables des données saisies et des potentiels dysfonctionnement du système.</li>
+          <li>Le PDF produit est 100% légal à présenter lors d’un contrôle, soyez éco responsables en économisant du papier</li>
+          <li>Les adresses emails saisies sont conservées à des fins statistiques, et ne seront JAMAIS divulguées ni vendues, mais SUPPRIMEES de notre base de donnée.</li>
+          <li>Ce site ne constitue pas une « incitation » à produire des attestations, vous devez suivre à la lettre les recommandations du gouvernement</li>
+        </ul>
+        <p>Pour toute question, vous pouvez nous écrire à <a class="t-color-00a9a8 text-deco-none" href="mailto:contact@getup.agency">contact@getup.agency</a> ou sur notre page Facebook</p>
+      </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./assets/sweetalert2.min.js"></script>
+    <script src="./assets/signaturePad.js"></script>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js?v=1"></script>
 
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105700553-16"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

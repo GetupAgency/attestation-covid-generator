@@ -36,48 +36,85 @@ document.getElementById('undo').addEventListener('click', function () {
 
 $(function() {
 
+  var checkForm = function(email){
+    if($('#nomprenom').val() == undefined ||$('#nomprenom').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre nom et prénom'
+      });return false;
+    }else if($('#nee').val() == undefined ||$('#nee').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre date de naissance'
+      });return false;
+    }else if($('#demeurant1').val() == undefined ||$('#demeurant1').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre adresse'
+      });return false;
+    }else if($('input[name=raison]:checked').val() == undefined || $('input[name=raison]:checked').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre motif de déplacement'
+      });return false;
+    }else if($('#fait-a').val() == undefined || $('#fait-a').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner l\'encart "fait à"'
+      });return false;
+    }else if(($('#email').val() == undefined || $('#email').val() == "") && email){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre adresse email pour recevoir l\'attestation'
+      });return false;
+    }
+    return true;
+  }
+
+  $.extend({
+      redirectPost: function(location, args)
+      {
+          var form = '';
+          $.each( args, function( key, value ) {
+              value = String(value);
+              value = value.split('"').join('\"')
+              form += '<input type="hidden" name="'+key+'" value="'+value+'">';
+          });
+          $('<form target="_blank" action="' + location + '" method="POST">' + form + '</form>').appendTo($(document.body)).submit();
+      }
+  });
+
+  $('#telecharger').click(function(){
+    if(checkForm(false)){
+      var datas = {
+        name: $('#nomprenom').val(),
+        birth: $('#nee').val(),
+        address1: $('#demeurant1').val(),
+        address2: $('#demeurant2').val(),
+        address3: $('#demeurant3').val(),
+        choice: parseInt($('input[name=raison]:checked').val()),
+        city: $('#fait-a').val(),
+        download: "yes",
+        signature: document.getElementById('signature-pad').toDataURL(),
+      }
+
+      $.redirectPost("https://api.attestation-sortie-covid19.fr/generate", datas);
+  
+    }
+  });
+
   // READY
   $('#submit').click(function(){
 
     if(!$('#submit').prop('disabled')){
 
-      if($('#nomprenom').val() == undefined ||$('#nomprenom').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner votre nom et prénom'
-        })
-      }else if($('#nee').val() == undefined ||$('#nee').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner votre date de naissance'
-        })
-      }else if($('#demeurant1').val() == undefined ||$('#demeurant1').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner votre adresse'
-        })
-      }else if($('input[name=raison]:checked').val() == undefined || $('input[name=raison]:checked').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner votre motif de déplacement'
-        })
-      }else if($('#fait-a').val() == undefined || $('#fait-a').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner l\'encart "fait à"'
-        })
-      }else if($('#email').val() == undefined || $('#email').val() == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Il semblerait que vous avez oubliez de renseigner votre adresse email pour recevoir l\'attestation'
-        })
-      }else{
+      if(checkForm(true)){
 
         var datas = {
           name: $('#nomprenom').val(),
