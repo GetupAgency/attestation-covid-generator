@@ -171,6 +171,24 @@ button:focus {
   font-size: 15px;
 }
 
+#lightbox-cgu {
+  display: none;
+}
+#lightbox-cgu.featherlight-inner {
+  display: block;
+}
+
+.list-cgu li {
+  margin-bottom: 5px;
+}
+
+.t-color-00a9a8 {
+  color: #00a9a8;
+}
+.bold {
+  font-weight: bold;
+}
+
 
 /*** VAL ***/
 html, body{
