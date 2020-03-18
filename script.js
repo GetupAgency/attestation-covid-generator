@@ -104,7 +104,7 @@ $(function() {
         signature: document.getElementById('signature-pad').toDataURL(),
       }
 
-      $.redirectPost("http://localhost/covid/generate", datas);
+      $.redirectPost("https://api.attestation-sortie-covid19.fr/generate", datas);
   
     }
   });
@@ -132,7 +132,7 @@ $(function() {
   
         $.ajax({
           type: "POST",
-          url: "http://localhost/covid/generate",//"https://api.attestation-sortie-covid19.fr/generate",
+          url: "https://api.attestation-sortie-covid19.fr/generate",
           data: datas,
           success: function(data){
             $('#submit').prop('disabled', 'true');
