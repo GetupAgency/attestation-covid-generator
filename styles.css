@@ -668,13 +668,13 @@ body {
 }
 @media screen and (max-width: 500px) {
   .main-title {
-    font-size: 35px;
+    font-size: 30px;
   }
   .actus:after {
     font-size: 80px;
   }
   .title-attestation {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 425px) {
