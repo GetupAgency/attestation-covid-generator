@@ -147,18 +147,19 @@ button:focus {
   width: 100%;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .trigger-hover {
     display: flex;
     margin-left: auto;
     margin-right: auto;
   }
-  #telecharger {
+  #telecharger , #imprimer{
     display: table !important;
+    width: 100%;
   }
 }
 @media screen and (max-width: 350px) {
-  #telecharger {
+  #telecharger  , #imprimer{
     font-size: 13px !important;
   }
 }
@@ -738,17 +739,6 @@ body {
   body {
     padding-top: 130px;
   }
-}
-
-.signature-pad{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 350px;
-  height: 170px;
-  background-color: white;
-  border: dashed 1px #727577;
-  touch-action: none;
 }
 
 @media print{

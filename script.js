@@ -211,15 +211,14 @@ $(function() {
 
 
     }
-    
-
-    $('#imprimer').click(function(){
-      window.print();
-
-    });
+  
 
   });
+  
+  $('#imprimer').click(function(){
+    window.print();
 
+  });
 
  
 });
