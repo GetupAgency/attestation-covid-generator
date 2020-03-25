@@ -144,7 +144,8 @@ $(function() {
         signature: document.getElementById('signature-pad').toDataURL(),
         email: $('#email').val(),
         date: dateFormat,
-        hour: faitHeure
+        hour: faitHeure,
+        download: "yes"
       }
 
       $.redirectPost("https://api.attestation-sortie-covid19.fr/generate", datas);
