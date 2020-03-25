@@ -32,6 +32,11 @@ document.getElementById('undo').addEventListener('click', function () {
   }
 });
 
+Date.prototype.toDateInputValue = (function() {
+  var local = new Date(this);
+  local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+  return local.toJSON().slice(0,10);
+});
 
 
 $(function() {
@@ -42,6 +47,8 @@ $(function() {
         console.log(token);          
       });
   });*/
+
+  $('#fait-le').val(new Date().toDateInputValue());
 
   
   var checkForm = function(email){
@@ -200,4 +207,5 @@ $(function() {
   });
 
 
+ 
 });

@@ -346,6 +346,7 @@ input:focus {
   color: #f6ac4f;
 }
 
+
 .input-check .checkbox-custom[type=radio]:checked:before {
   content: '';
   position: absolute;
@@ -751,7 +752,50 @@ body {
 }
 
 @media print{
-  .bck-green, .topbar, .input-resp, footer{
+  .bck-green, .topbar, .input-resp, footer, .button-wrapper, h1, .signez, #lightbox-cgu{
     display: none!important;
   }
+
+  .header-attestation{
+    padding-bottom: 30px;
+  }
+
+  .title-attestation{
+    font-size: 20px;
+  }
+
+  .input-texte{
+    border-bottom: 0px;
+  }
+
+  body{zoom: 0.76;}
+
+  #attestation{
+    padding: 0px;
+    padding-top: 50px;
+    box-shadow: none!important;
+    margin-bottom: 0px;
+  }
+
+  #signature-pad{
+    border:none!important;
+  }
+
+  .checkbox-custom{
+    -webkit-appearance: checkbox!important;
+    -moz-appearance: checkbox!important;
+    appearance: inherit!important;
+    border: none!important;
+  }
+
+  .checkbox-custom::after{
+    content:''!important;
+    display: none!important;
+  }
+
+  .checkbox-custom::before{
+    content:''!important;
+    display: none!important;
+  }
+
 }
