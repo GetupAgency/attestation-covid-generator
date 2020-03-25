@@ -12,7 +12,7 @@
     <meta name="twitter:card" content="Attestation de sortie Covid-19 en PDF" />
     <meta name="twitter:site" content="https://www.attestation-sortie-covid19.fr/" />
     <meta name="twitter:creator" content="@getupagency" />
-    <link href="styles.min.css?v=2" rel="stylesheet"/>
+    <link href="styles.old.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -57,17 +57,28 @@
             <div style="display: flex">
                 <label for="nee">Né(e) le :</label>
                 <input type="text" class="input-texte" placeholder="Renseignez votre date de naissance" id="nee" required/>
+            </div>
+
+            <br>
+
+            <div style="display: flex; width: 100%;">
+                <label for="lieuNaissance">À :</label>
+                <div style="display: flex; flex-direction: column;width: 100%;">
+                  <input type="text" class="input-texte" placeholder="Renseignez votre lieu de naissance" id="lieuNaissance" required/>
                 </div>
+            </div>
+
             <br>
 
             <div style="display: flex; width: 100%;">
                 <label for="demeurant1">Demeurant :</label>
                 <div style="display: flex; flex-direction: column;width: 100%;">
                   <input type="text" class="input-texte" placeholder="Renseignez votre lieu de domicile" id="demeurant1" required/>
-                  <input type="text" class="input-texte" placeholder="" id="demeurant2" />
-                  <input type="text" class="input-texte" placeholder="" id="demeurant3" />
                 </div>
             </div>
+
+            
+            
 
         </div>
 
@@ -123,6 +134,22 @@
                 des animaux de compagnie.</label>
         </div>
 
+        <div class="input-check mw-m-auto">
+          <div style="min-width: 50px;">
+            <input type="radio" id="convocation" class="checkbox-custom" name="raison" value="6" required/>
+          </div>
+
+            <label for="convocation">Convocation judiciaire ou administrative. </label>
+        </div>
+
+        <div class="input-check mw-m-auto">
+          <div style="min-width: 50px;">
+            <input type="radio" id="participation" class="checkbox-custom" name="raison" value="7" required/>
+          </div>
+
+          <label for="participation">Participation à des missions d’intérêt général sur demande de l’autorité administrative. </label>
+      </div>
+
         <div class="container-signature mt-50 mw-m-auto">
 
           <div style="width: 100%;">
@@ -137,35 +164,43 @@
               <button class="trigger-hover upper" id="clear">Recommencer</button>
             </div>
 
-
           </div>
 
-          <!-- FAIT LE -->
-          <div style="display: flex; align-items: center;" class="fait-a">
+          <div style="display: flex;flex-direction: column;">
 
-            <label for="fait-a" style="min-width: 50px;">Fait à</label>
-            <input type="text" id="fait-a" class="input-texte" required />
+            <!-- FAIT LE -->
+            <div style="display: flex; align-items: center;" class="fait-a">
+
+              <label for="fait-a" style="min-width: 50px;">Fait à</label>
+              <input type="text" id="fait-a" class="input-texte" required />
+            </div>
+
+            <div style="display: flex; align-items: center;margin-top: 20px" class="fait-a">
+              <label for="fait-a" style="min-width: 50px;">Le</label>
+              <input type="date" id="fait-le" class="input-date" required>
+            </div>
+            
+            <div style="display: flex; align-items: center;margin-top: 10px" class="fait-a">
+              <label for="fait-a" style="min-width: 50px;">à</label>
+              <input type="time" id="fait-heure" class="input-texte" required>
+            </div>
+
           </div>
         
         </div>
-        <div class="container-signature mt-50 mw-m-auto">
-
-        <div style="display: flex; align-items: center;" class="fait-a">
-
-          <label for="fait-a" style="min-width: 50px;">Le</label>
-          <input type="date" id="fait-le" class="form-control3" required>
-        </div>
-        <div style="display: flex; align-items: center;" class="fait-a">
-
-          <label for="fait-a" style="min-width: 50px;">à</label>
-          <input type="time" id="fait-heure" class="form-control3" required>
-        </div>
-        </div>
-        
+       
     </div>
 
     <!-- INPUT MAIL -->
     <div class="input-resp" style="padding: 36px;">
+
+      <div style="text-align: center; margin-top: 35px; height: 50px;">
+        <a class="trigger-download-attestation trigger-hover upper" id="telecharger">Télécharger directement en PDF<img src="assets/img/download.svg" class="downloadIco"/></a>
+        <a class="trigger-download-attestation trigger-hover upper" id="imprimer">Imprimer<img src="assets/img/print.svg" class="downloadIco"/></a>
+      </div>
+
+      <p style="text-align: center; color: #00A9A8;">OU</p>
+      
       <p style="color: #00A9A8; text-align: center;" >Renseignez votre e-mail pour recevoir votre attestation</p>
       <input type="mail" placeholder="Renseignez votre email" class="input-mail" id="email" required />
       <input type="submit" id="submit" value="RECEVOIR MON ATTESTATION" class="input-submit" /><br>
@@ -173,10 +208,7 @@
         <div style="font-size: 10px;text-align: left;">en utilisant ce service, vous acceptez les <a href="#" data-featherlight="#lightbox-cgu" style="margin-bottom: 10px; color: #000;">conditions d'utilisation</a></div>
         <div style="font-size: 10px;text-align: right;">Vérifiez vos spams</div>
       </div>
-      <p style="text-align: center; color: #00A9A8;">OU</p>
-      <div style="text-align: center; margin-top: 35px; height: 50px;">
-        <a class="trigger-download-attestation trigger-hover upper" id="telecharger">Télécharger directement en PDF<img src="assets/img/download.svg" class="downloadIco"/></a>
-      </div>
+
       </div>
 
     <!-- LOADER -->

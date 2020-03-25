@@ -1,4 +1,4 @@
-@@ -1,715 +0,0 @@
+
 .wrapper {
     position: relative;
     width: 350px;
@@ -174,6 +174,18 @@ button:focus {
   font-size: 15px;
 }
 
+
+#imprimer {
+  border: 2px solid #00a9a8;
+  background-color: #00a9a8;
+  transition: all .3s ease;
+  padding: 10px 45px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 #lightbox-cgu {
   display: none;
 }
@@ -246,15 +258,27 @@ body{
   text-align: center;
 }
 
+
+.input-date{
+  border-bottom: 1px dashed #727577;
+  border-left: none!important;
+  border-right: none!important;
+  border-top: none!important;
+  width: 100%;
+  padding-bottom: 5px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
 .input-texte{
   border-bottom: 1px dashed #727577;
   border-left: none!important;
   border-right: none!important;
   border-top: none!important;
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 input:focus {
   outline: none;
@@ -712,5 +736,22 @@ body {
 @media screen and (max-width: 344px) {
   body {
     padding-top: 130px;
+  }
+}
+
+.signature-pad{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 350px;
+  height: 170px;
+  background-color: white;
+  border: dashed 1px #727577;
+  touch-action: none;
+}
+
+@media print{
+  .bck-green, .topbar, .input-resp, footer{
+    display: none!important;
   }
 }

@@ -124,16 +124,25 @@ $(function() {
 
       if(checkForm(true)){
 
+        //DATE
+        const date = new Date($('#fait-le').val());
+        const dateFormat = new Intl.DateTimeFormat('fr').format(date);
+
+        // HEURE
+        var faitHeure = $('#fait-heure').val();
+        faitHeure = faitHeure.replace(":", "h");
+
         var datas = {
           name: $('#nomprenom').val(),
           birth: $('#nee').val(),
           address1: $('#demeurant1').val(),
-          address2: $('#demeurant2').val(),
-          address3: $('#demeurant3').val(),
+          birthcity: $('#lieuNaissance').val(),
           choice: parseInt($('input[name=raison]:checked').val()),
           city: $('#fait-a').val(),
           signature: document.getElementById('signature-pad').toDataURL(),
-          email: $('#email').val()
+          email: $('#email').val(),
+          date: dateFormat,
+          hour: faitHeure
         }
     
         $('#overlay').show();
