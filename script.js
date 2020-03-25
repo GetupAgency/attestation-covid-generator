@@ -63,6 +63,12 @@ $(function() {
         title: 'Oops...',
         text: 'Il semblerait que vous avez oubliez de renseigner votre adresse'
       });return false;
+    }else if($('#lieuNaissance').val() == undefined ||$('#lieuNaissance').val() == ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner votre lieu de naissance'
+      });return false;
     }else if($('input[name=raison]:checked').val() == undefined || $('input[name=raison]:checked').val() == ""){
       Swal.fire({
         icon: 'error',
@@ -74,6 +80,18 @@ $(function() {
         icon: 'error',
         title: 'Oops...',
         text: 'Il semblerait que vous avez oubliez de renseigner l\'encart "fait à"'
+      });return false;
+    }else if(($('#fait-le').val() == undefined || $('#fait-le').val() == "")){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner le champ fait-le'
+      });return false;
+    }else if(($('#fait-heure').val() == undefined || $('#fait-heure').val() == "")){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Il semblerait que vous avez oubliez de renseigner l\'heure de votre sortie'
       });return false;
     }else if(($('#email').val() == undefined || $('#email').val() == "") && email){
       Swal.fire({
@@ -100,16 +118,26 @@ $(function() {
 
   $('#telecharger').click(function(){
     if(checkForm(false)){
+
+      //DATE
+      const date = new Date($('#fait-le').val());
+      const dateFormat = new Intl.DateTimeFormat('fr').format(date);
+
+      // HEURE
+      var faitHeure = $('#fait-heure').val();
+      faitHeure = faitHeure.replace(":", "h");
+
       var datas = {
         name: $('#nomprenom').val(),
         birth: $('#nee').val(),
         address1: $('#demeurant1').val(),
-        address2: $('#demeurant2').val(),
-        address3: $('#demeurant3').val(),
+        birthcity: $('#lieuNaissance').val(),
         choice: parseInt($('input[name=raison]:checked').val()),
         city: $('#fait-a').val(),
-        download: "yes",
         signature: document.getElementById('signature-pad').toDataURL(),
+        email: $('#email').val(),
+        date: dateFormat,
+        hour: faitHeure
       }
 
       $.redirectPost("https://api.attestation-sortie-covid19.fr/generate", datas);
