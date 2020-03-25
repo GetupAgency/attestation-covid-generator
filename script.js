@@ -37,11 +37,11 @@ document.getElementById('undo').addEventListener('click', function () {
 $(function() {
 
   // CAPTCHA CHECK
-  grecaptcha.ready(function () {
+  /*grecaptcha.ready(function () {
       grecaptcha.execute('6Ldn9eEUAAAAAMEIXFZuFopEl_esncpZgLEvE89p', { action: 'contact' }).then(function (token) {
         console.log(token);          
       });
-  });
+  });*/
 
   
   var checkForm = function(email){
