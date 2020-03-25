@@ -212,6 +212,12 @@ $(function() {
 
     }
     
+
+    $('#imprimer').click(function(){
+      window.print();
+
+    });
+
   });
 
 
