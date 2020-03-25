@@ -39,6 +39,8 @@ Date.prototype.toDateInputValue = (function() {
 });
 
 
+
+
 $(function() {
 
   // CAPTCHA CHECK
@@ -50,6 +52,11 @@ $(function() {
 
   $('#fait-le').val(new Date().toDateInputValue());
 
+  var nowHour = new Date().toLocaleTimeString('fr', { hour12: false, 
+    hour: "numeric", 
+    minute: "numeric"});
+  
+    $('#fait-heure').val(nowHour);
   
   var checkForm = function(email){
     if($('#nomprenom').val() == undefined ||$('#nomprenom').val() == ""){
