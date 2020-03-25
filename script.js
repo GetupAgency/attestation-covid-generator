@@ -13,7 +13,7 @@ function resizeCanvas() {
     canvas.getContext("2d").scale(ratio, ratio);
 }
 
-window.onorientationchange = resizeCanvas;
+window.onresize = resizeCanvas;
 resizeCanvas();
 
 var signaturePad = new SignaturePad(canvas, {
@@ -35,11 +35,6 @@ document.getElementById('undo').addEventListener('click', function () {
 
 
 $(function() {
-
-  $(document).on("click", ".input-texte", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-  });
 
   var checkForm = function(email){
     if($('#nomprenom').val() == undefined ||$('#nomprenom').val() == ""){
